@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <ItemListContainer nombre={"Mi nombre es Mariano"}/>
+      <ItemListContainer/>
     </div>
   );
 }

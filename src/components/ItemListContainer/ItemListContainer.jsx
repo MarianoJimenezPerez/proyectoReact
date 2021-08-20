@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { promisePedirDatos } from '../BaseDeDatos/promisePedirDatos'
+import { ItemList } from './ItemList'
 
-export const ItemListContainer = ({nombre}) => {
+export const ItemListContainer = () => {
 
-    return(
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
 
-        <div>
-            <p className="t-center m-10">{nombre}</p>
-        </div>        
-    ) 
+    useEffect( ()=> {
+        setLoading(true)
+
+        promisePedirDatos()
+            .then(res => setData(res))
+            .catch(err => console.log(err))
+            .finally(()=> {
+                setLoading(false)
+            })
+    }, [])
+    
+    return (
+        <>
+            {loading 
+                ? <h2 className="t-center">...Cargando la tienda, aguarde un instante...</h2>
+                : <ItemList productos={data}/>    
+            }
+        </>
+    )
 }

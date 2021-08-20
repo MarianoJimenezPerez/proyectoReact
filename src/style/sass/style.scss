@@ -17,6 +17,19 @@
 .t-center{
     text-align: center;
 }
-.m-10{
-    margin-top: 10em;
+.mt-2{
+    margin-top: 2rem;
+}
+.mt-10{
+    margin-top: 10rem;
+}
+.grid-responsive{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.card{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 1rem black inset;
 }

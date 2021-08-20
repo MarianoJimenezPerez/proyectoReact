@@ -1,0 +1,1 @@
+*{margin:0;padding:0}.header{display:block;justify-content:space-between;background-color:rgba(24,153,35,0.658)}.ul-nav{list-style:none;text-decoration:none;display:flex;flex-direction:row;justify-content:space-between}.t-center{text-align:center}.m-10{margin-top:10em}.grid-responsive{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:1rem}
