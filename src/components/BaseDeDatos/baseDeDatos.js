@@ -2,6 +2,7 @@ export const baseDeDatos = [
     {
         id: 1,
         nombre: "LA VIDA INVISIBLE DE ADDIE LARUE",
+        category: "terror",
         precioInicial: 7000,
         precioFinal: 6000,
         autor: "Schwab Victoria",       
@@ -11,6 +12,7 @@ export const baseDeDatos = [
     {
         id: 2,
         nombre: "LAS SEÑORITAS",
+        category: "terror",
         precioInicial: 8000,
         precioFinal: 7000,
         autor: "Ramos Laura",    
