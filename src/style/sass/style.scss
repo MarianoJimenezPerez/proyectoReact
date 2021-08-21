@@ -2,20 +2,38 @@
     margin: 0;
     padding: 0;
 }
-.header{
-    display: block;
-    justify-content: space-between;
-    background-color: rgba(24, 153, 35, 0.658);
+body{
+    background-color: #bcd8bcd6;
 }
-.ul-nav{
-    list-style: none;
-    text-decoration: none;
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50px;
+    background-color: green;
+}
+.nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    h2{
+        color: white;
+    }
+    ul{
+        list-style: none;
+        text-decoration: none;
+        li{
+            margin: 0 2rem;
+            color: white;
+        }
+    }
 }
 .t-center{
     text-align: center;
+}
+.t-line-through{
+    text-decoration: line-through;
 }
 .mt-2{
     margin-top: 2rem;
@@ -31,5 +49,6 @@
 .card{
     padding: 1rem;
     margin: 1rem;
-    box-shadow: 0 0 1rem black inset;
+    box-shadow: 0 0 1rem black;
+    background-color: white;
 }

@@ -6,7 +6,7 @@ export const baseDeDatos = [
         precioFinal: 6000,
         autor: "Schwab Victoria",       
         desc: "...",
-        img: "../media/images/1"
+        img: '../../../public/assets/images/1.png'
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const baseDeDatos = [
         precioFinal: 7000,
         autor: "Ramos Laura",    
         desc: "...",
-        img: "../media/images/2.png"
+        img: "../../media/images/2.png"
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ export const baseDeDatos = [
         precioFinal: 4500,
         autor: "Kellen Alice",    
         desc: "...",
-        img: "../media/images/3.png"
+        img: "../../media/images/3.png"
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ export const baseDeDatos = [
         precioFinal: 1500,
         autor: "Montgomery Lucy Maud",    
         desc: "...",
-        img: "../media/images/4.png"
+        img: "../../media/images/4.png"
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ export const baseDeDatos = [
         precioFinal: 1700,
         autor: "Godoy Ariana",    
         desc: "...",
-        img: "../media/images/5.png"
+        img: "../../media/images/5.png"
     },
     {
         id: 6,
@@ -51,6 +51,6 @@ export const baseDeDatos = [
         precioFinal: 2100,
         autor: "Piñeiro Claudia",    
         desc: "...",
-        img: "../media/images/6.png"
+        img: "../../media/images/6.png"
     }
 ]

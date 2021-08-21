@@ -5,9 +5,9 @@ export const NavBar = () => {
     return(
 
         <header className="header t-center">
-            <nav>
+            <nav className="nav">
                 <h2>Mi Logo</h2>
-                <ul className="ul-nav">
+                <ul className="nav">
                     <li>Inicio</li>
                     <li>Tienda</li>
                     <li>Quienes somos</li>

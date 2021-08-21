@@ -21,7 +21,7 @@ export const ItemListContainer = () => {
     return (
         <>
             {loading 
-                ? <h2 className="t-center">...Cargando la tienda, aguarde un instante...</h2>
+                ? <h2 className="t-center mt-2">...Cargando la tienda, aguarde un instante...</h2>
                 : <ItemList productos={data}/>    
             }
         </>
