@@ -1,4 +1,4 @@
-import { baseDeDatos } from "../BaseDeDatos/baseDeDatos"
+import { baseDeDatos } from "./baseDeDatos"
 
 export const promisePedirDatos = () => {
 
