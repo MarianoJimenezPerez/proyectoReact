@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;1,100&display=swap');
 *{
     margin: 0;
     padding: 0;
+}
+.font-A-M-M{
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 400;
+}
+.font-A-M-I-L{
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 100;
+    font-size: 0.8em;
 }
 body{
     background-color: #bcd8bcd6;
@@ -28,9 +38,36 @@ body{
             color: white;
         }
     }
+    a{
+        color: white;
+    }
+}
+.logo-carrito{
+    height: 40px;
+}
+.ul-filtro{
+    margin: 2em 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10em;
+    a{
+        padding: 0 1em;
+        color: black;
+    }
+    a:hover{
+        background-color: #5f5f5f ;
+        color: white;
+        transition: ease 0.1s;
+    }
+
 }
 .t-center{
     text-align: center;
+}
+.t-justify{
+    text-align: justify;
 }
 .t-line-through{
     text-decoration: line-through;
@@ -44,11 +81,147 @@ body{
 .grid-responsive{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    padding: 0 20em;
 }
 .card{
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: 0 0 1rem black;
+    padding: 0 0 1rem 0 ;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     background-color: white;
+}
+.card:hover{
+    background-color: #32555f;
+    color: white;
+    transition: ease 0.3s;
+    transform: scale(1.1);
+
+    a{
+        background-color: white;
+        color:  #5f5f5f ;
+        transition: ease 0.5s;
+    }
+}
+.bookgrid{
+    display: grid; 
+    grid-template-columns: 0fr 1fr; 
+    grid-template-rows: 0.5fr 1fr 1fr 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "bookImg bookNameAndAutor"
+        "bookImg bookDescription"
+        "bookImg bookPrice"
+        "bookImg botones"; 
+    margin: 5em 21em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-color: white;
+
+}
+.book-img {
+    grid-area: bookImg;
+    padding: 2em;
+}
+.book-name-and-autor {
+    grid-area: bookNameAndAutor;
+    padding: 0.5em; 
+}
+.book-description {
+    grid-area: bookDescription;
+    text-align: justify;
+    padding: 0.5em;
+}
+.book-price {
+    grid-area: bookPrice; 
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.botones {
+    grid-area: botones;
+    padding: 0.5em;
+}
+.itemGrid {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 6fr 1fr 0.5fr 1fr; 
+    gap: 0px 0px; 
+}
+.itemImg { grid-area: 1 / 1 / 3 / 2; }
+.itemName { grid-area: 2 / 1 / 3 / 2; }
+.itemAutor { grid-area: 3 / 1 / 4 / 2; }
+.verMas { grid-area: 4 / 1 / 5 / 2; }
+.btn1{
+    background-color: red;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+}
+.btn2{
+    background-color: #4b7d40;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+}
+.btn3{
+    background-color: #32555f;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+}
+.btn-suma{
+    width: 25px;
+}
+.btn-resta{
+    width: 25px;
+}
+.btn1:hover{
+    background-color: #e2af07;
+    color: white;
+    transition: ease 0.2s;
+    
+}
+.btn2:hover{
+    background-color: #e2af07;
+    color: white;
+    transition: ease 0.2s;
+}
+.btn3:hover{
+    background-color: #e2af07;
+    color: white;
+    transition: ease 0.2s;
+}
+a{
+    text-decoration: none;
+}
+.d-flex{
+    display: flex;
+}
+.flex-direction-column{
+    flex-direction: column;
+}
+.flex-direction-row{
+    flex-direction: row;
+}
+.justify-content-end{
+    justify-content: flex-end;
+}
+.justify-content-space-between{
+    justify-content: space-between;
+}
+.align-items-center{
+    align-items: center;
+}
+.w-100{
+    width: 100%;
+}
+.m-side-1em{
+    margin: 0 1em;
 }

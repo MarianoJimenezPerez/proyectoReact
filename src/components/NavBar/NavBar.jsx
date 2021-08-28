@@ -11,8 +11,9 @@ export const NavBar = () => {
                 <ul className="nav">
                     <li><Link to={"/inicio"}>Inicio</Link></li>
                     <li><Link to={"/tienda"}>Tienda</Link></li>
-                    <li>Quienes somos</li>
-                    <li>Contacto</li>
+                    <li><Link to={"/trabajando"}>Quienes somos</Link></li>
+                    <li><Link to={"/trabajando"}>Contactanos</Link></li>
+                    <li><Link to={"/trabajando"}><img src="/assets/images/carrito-de-compras.png" alt="carrito de compras" className="logo-carrito"/></Link></li>
                 </ul>
             </nav>            
         </header>        

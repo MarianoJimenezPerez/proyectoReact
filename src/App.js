@@ -3,6 +3,7 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import './style/css/style.css'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
+import {Trabajando} from './components/Trabajando/Trabajando'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Switch>
 
           <Route exact path="/inicio">
+            <Trabajando/>
           </Route>
 
           <Route exact path="/tienda">
@@ -21,8 +23,12 @@ function App() {
             <ItemListContainer/>
           </Route>
 
-          <Route exact path="/tienda/detail/:idemId">
+          <Route exact path="/tienda/detail/:itemId">
             <ItemDetailContainer/>
+          </Route>
+
+          <Route exact path="/trabajando">
+            <Trabajando/>
           </Route>
 
           <Route path="*">
