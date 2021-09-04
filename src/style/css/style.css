@@ -279,3 +279,29 @@ a {
 .m-side-1em {
   margin: 0 1em;
 }
+
+.cart-container {
+  margin: 5em 15em;
+}
+
+.cart-container table {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.head-carrito {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-carrito h1 {
+  align-self: center;
+}
+
+.head-carrito span {
+  align-self: flex-end;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}

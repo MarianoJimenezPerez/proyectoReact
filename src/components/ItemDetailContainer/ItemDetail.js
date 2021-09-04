@@ -11,7 +11,10 @@ export const ItemDetail = ({id, img, category, nombre, autor, precioInicial, pre
         agregarAlCarrito({
             id, img, category, nombre, autor, precioFinal, cantidad
         })
+        const botonAgregar = document.querySelector('#agregar')
+        botonAgregar.classList.add('d-none')
     }
+
 
     return (
         <div className="bookgrid">
@@ -35,7 +38,14 @@ export const ItemDetail = ({id, img, category, nombre, autor, precioInicial, pre
                         agregado= {isInCart(id)}
                         />
                     </div>
-                    <span className="botones btn2" onClick={handleAgregar}>Agregar al carrito</span>
+                    <div>
+                        {
+                            isInCart(id)
+                                ? <div></div>
+                                : <span className="botones btn2" onClick={handleAgregar} id="agregar">Agregar al carrito</span>
+                        }
+                    </div>
+                    
                 </div>
                 <div>
                     <Link to={`../category/${category}`}><span className="botones btn3">Títulos relacionados</span></Link>
