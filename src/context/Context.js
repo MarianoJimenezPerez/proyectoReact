@@ -25,8 +25,13 @@ export const CartProvider = ({children}) => {
         setArrayCarrito([])
     }
 
+    const isInCart = (id) => { 
+        return arrayCarrito.some(prod => prod.id === id)
+    }
+
+
     return(
-        <Context.Provider value={{arrayCarrito, agregarAlCarrito, eliminarDelCarrito, cantidadCarrito, vaciarCarrito}}>
+        <Context.Provider value={{arrayCarrito, agregarAlCarrito, eliminarDelCarrito, cantidadCarrito, vaciarCarrito, isInCart}}>
             {children}
         </Context.Provider>
     )

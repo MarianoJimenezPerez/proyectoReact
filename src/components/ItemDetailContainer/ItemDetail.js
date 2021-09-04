@@ -6,7 +6,7 @@ import { Context } from './../../context/Context'
 export const ItemDetail = ({id, img, category, nombre, autor, precioInicial, precioFinal, stock, desc}) => {
 
     const [cantidad, setCantidad] = useState(1)
-    const {agregarAlCarrito} = useContext(Context)
+    const {agregarAlCarrito, isInCart} = useContext(Context)
     const handleAgregar = () =>{
         agregarAlCarrito({
             id, img, category, nombre, autor, precioFinal, cantidad
@@ -32,6 +32,7 @@ export const ItemDetail = ({id, img, category, nombre, autor, precioInicial, pre
                         max={stock}
                         cantidad={cantidad}
                         setCantidad={setCantidad}
+                        agregado= {isInCart(id)}
                         />
                     </div>
                     <span className="botones btn2" onClick={handleAgregar}>Agregar al carrito</span>

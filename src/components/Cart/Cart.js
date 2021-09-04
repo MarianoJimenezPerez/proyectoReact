@@ -11,10 +11,12 @@ export const Cart = () => {
             {
                 arrayCarrito.map(prod => (
                     <div key={prod.id}>
-                        <img src={prod.img}></img>
+                        <img src={prod.img} alt={prod.nombre}></img>
                         <h3>{prod.nombre}</h3>
                         <h4>Cantidad: {prod.cantidad}</h4>
                         <h4>Precio: {prod.precioFinal  * prod.cantidad}</h4>
+                        <button onClick={() => eliminarDelCarrito(prod.id)}>Eliminar item</button>
+                        <button onClick={vaciarCarrito}>Vaciar el carrito de compras</button>
                     </div>
                 ))
             }
