@@ -4,39 +4,49 @@ import './style/css/style.css'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Trabajando} from './components/Trabajando/Trabajando'
+import {Cart} from './components/Cart/Cart'
+import { CartProvider } from './context/Context'
 
 function App() {
+
   return (
+    <CartProvider>
       <BrowserRouter>
         <NavBar/>
-        <Switch>
+          <Switch>
+            <Route exact path="/inicio">
+              <Trabajando/>
+            </Route>
 
-          <Route exact path="/inicio">
-            <Trabajando/>
-          </Route>
+                <Route exact path="/tienda">
+                  <ItemListContainer/>
+                </Route>
 
-          <Route exact path="/tienda">
-            <ItemListContainer/>
-          </Route>
+                <Route exact path="/tienda/category/:catId">
+                  <ItemListContainer/>
+                </Route>
 
-          <Route exact path="/tienda/category/:catId">
-            <ItemListContainer/>
-          </Route>
+                <Route exact path="/tienda/detail/:itemId">
+                  <ItemDetailContainer/>
+                </Route>
 
-          <Route exact path="/tienda/detail/:itemId">
-            <ItemDetailContainer/>
-          </Route>
+                <Route exact path="/trabajando">
+                  <Trabajando/>
+                </Route>
 
-          <Route exact path="/trabajando">
-            <Trabajando/>
-          </Route>
+                <Route exact path="/cart">
+                  <Cart/>
+                </Route>
 
-          <Route path="*">
-            <Redirect to="/inicio"/>
-          </Route>
+                <Route path="*">
+                  <Redirect to="/inicio"/>
+                </Route>
 
-        </Switch>
-      </BrowserRouter>
+              </Switch>
+            </BrowserRouter>
+
+    </CartProvider>
+      
   );
 }
 

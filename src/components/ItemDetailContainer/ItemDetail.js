@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ItemCount } from '../ItemCount/ItemCount'
+import { Context } from './../../context/Context'
 
-export const ItemDetail = ({img, category, nombre, autor, precioInicial, precioFinal, desc}) => {
+export const ItemDetail = ({id, img, category, nombre, autor, precioInicial, precioFinal, stock, desc}) => {
+
+    const [cantidad, setCantidad] = useState(1)
+    const {agregarAlCarrito} = useContext(Context)
+    const handleAgregar = () =>{
+        agregarAlCarrito({
+            id, img, category, nombre, autor, precioFinal, cantidad
+        })
+    }
 
     return (
         <div className="bookgrid">
@@ -18,11 +28,13 @@ export const ItemDetail = ({img, category, nombre, autor, precioInicial, precioF
             <div className="d-flex flex-direction-row justify-content-space-between align-items-center">
                 <div className="d-flex flex-direction-row align-items-center justify-content-space-between">
                     <div className="d-flex flex-direction-row t-center">
-                        <button className="btn-resta">-</button>
-                        <span className="m-side-1em">1</span>
-                        <button className="btn-suma ">+</button>
+                        <ItemCount
+                        max={stock}
+                        cantidad={cantidad}
+                        setCantidad={setCantidad}
+                        />
                     </div>
-                    <Link to={``}><span className="botones btn2">Agregar al carrito</span></Link>
+                    <span className="botones btn2" onClick={handleAgregar}>Agregar al carrito</span>
                 </div>
                 <div>
                     <Link to={`../category/${category}`}><span className="botones btn3">Títulos relacionados</span></Link>
