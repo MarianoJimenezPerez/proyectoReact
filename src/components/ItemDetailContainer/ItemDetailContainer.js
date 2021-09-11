@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { promisePedirDatos } from '../BaseDeDatos/promisePedirDatos'
+import { getFirestore } from '../firebase/config'
 import { ItemDetail } from './ItemDetail'
 
 export const ItemDetailContainer = () => {
@@ -11,13 +11,20 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
+
         setLoading(true)
 
-        promisePedirDatos()
-            .then( res => {
-                setItem( res.find( prod => prod.id === parseInt(itemId)) )
-            })
-            .finally(()=> { setLoading(false)})
+
+        const bd = getFirestore()
+        const productos = bd.collection('productos')
+        const item = productos.doc(itemId)
+
+        item.get()
+        .then((doc) =>{
+            setItem({...doc.data(), id: doc.id})
+        })
+
+        .finally(()=> { setLoading(false)})	
 
     }, [itemId])
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { promisePedirDatos } from '../BaseDeDatos/promisePedirDatos'
 import { ItemList } from './ItemList'
 import { useParams } from 'react-router-dom'
+import { getFirestore } from '../firebase/config'
+
 
 export const ItemListContainer = () => {
+
 
     const { catId } = useParams()
 
@@ -12,20 +14,34 @@ export const ItemListContainer = () => {
 
     useEffect( ()=> {
         setLoading(true)
+        const bd = getFirestore()
+        const productos = bd.collection('productos')
 
-        promisePedirDatos()
-            .then(res => {
-                if(catId){
-                    const filtrado = res.filter(prod => prod.category === catId)
-                    setData(filtrado)
-                } else{
-                    setData(res)
-                }
+        if (catId) {
+            const filtrado = productos.where('category', '==', catId)
+            filtrado.get()
+            .then((resp) => {
+                const data = resp.docs.map((doc) => ({...doc.data(), id: doc.id}))
+                console.log(data)
+                setData(data)
             })
-            .catch(err => console.log(err))
-            .finally(()=> {
+            .finally(()=>{
+            setLoading(false)
+            })
+        }
+        else {
+            productos.get()
+            .then((resp) => {
+                const data = resp.docs.map((doc) => ({...doc.data(), id: doc.id}))
+                console.log(data)
+                setData(data)
+                })
+            .finally(()=>{
                 setLoading(false)
             })
+        }
+        
+        
     }, [catId])
     
     return (

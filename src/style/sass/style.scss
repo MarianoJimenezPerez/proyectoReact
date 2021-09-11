@@ -186,17 +186,19 @@ body{
     background-color: #e2af07;
     color: white;
     transition: ease 0.2s;
-    
+    cursor: pointer;
 }
 .btn2:hover{
     background-color: #e2af07;
     color: white;
     transition: ease 0.2s;
+    cursor: pointer;
 }
 .btn3:hover{
     background-color: #e2af07;
     color: white;
     transition: ease 0.2s;
+    cursor: pointer;
 }
 a{
     text-decoration: none;
@@ -238,13 +240,13 @@ a{
 .head-carrito{
     display: flex;
     flex-direction: column;
-    h1{
-        align-self: center;
-    }
-    span{
-        align-self: flex-end;
+    div{
+        margin-top: 2em;
     }
 }
 .mb-1{
     margin-bottom: 1em;
+}
+.h-150px{
+    height: 150px;
 }
