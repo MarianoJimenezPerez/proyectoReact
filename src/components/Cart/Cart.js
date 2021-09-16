@@ -15,7 +15,7 @@ export const Cart = () => {
                         <h1>Tu resumen de compra</h1>
                         <div>
                             <span onClick={vaciarCarrito} className=" btn1">Vaciar carro</span>
-                            <span className= "btn2">Terminar mi compra</span>
+                            <Link to={"/checkout"} className= "btn2">Terminar mi compra</Link>
                             <span>Total ${precioTotalCarrito()}</span>
                         </div>                
                     </div>            
