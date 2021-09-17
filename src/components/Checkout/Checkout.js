@@ -1,11 +1,13 @@
 import React, {useContext, useState} from 'react'
+import { Redirect } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import { Context } from '../../context/Context'
 import { generarOrden } from '../firebase/generarOrden'
 
 
 export const Checkout = () => {
 
-    const {arrayCarrito, precioTotalCarrito} = useContext(Context)
+    const {arrayCarrito, precioTotalCarrito, vaciarCarrito} = useContext(Context)
     const [values, setValues] = useState({
         nombre: '',
         mail: '',
@@ -22,9 +24,23 @@ export const Checkout = () => {
         e.preventDefault()
         if(values.nombre.length > 4 && values.mail.length > 4 && values.tel.length > 8) {
             generarOrden(values, arrayCarrito, precioTotalCarrito)
-            alert ("su orden se generó correctamente")
+            .then ( res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: `Su orden fue generada correctamente con el número ${res}`,
+                    timer: 3000
+                })
+                vaciarCarrito()
+            })
+
+            .catch( err => alert (err))
+            
         } else {
-            alert ("Por favor introduce datos válidos para terminar la compra")
+            Swal.fire({
+                icon: 'error',
+                title: `Alguno de los campos ingresados es incorrecto`,
+                confirmButtonText: 'Intentar de nuevo'
+            })
         }
         
     }
@@ -33,7 +49,7 @@ export const Checkout = () => {
                 <div>
                     <h2>Checkout</h2>
                     {!arrayCarrito.length
-                        ?<h4>Aún no tienes productos en tu carrito</h4>
+                        ?<Redirect to="/tienda"/>
                         :<form onSubmit={handleSubmit}>
                             <input
                             type= "text"
