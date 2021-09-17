@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 
 export const Cart = () => {
 
-    const {arrayCarrito, eliminarDelCarrito, vaciarCarrito, precioTotalCarrito, hayProductos} = useContext(Context)
+    const {arrayCarrito, eliminarDelCarrito, vaciarCarrito, precioTotalCarrito} = useContext(Context)
 
     return (
         <div>
             {
-                hayProductos
+                arrayCarrito.length
                 ? <div className="cart-container t-center">
                     <div className="head-carrito">
                         <h1>Tu resumen de compra</h1>

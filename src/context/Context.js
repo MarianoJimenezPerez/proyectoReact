@@ -5,11 +5,8 @@ export const Context = createContext()
 export const CartProvider = ({children}) => {
 
     const [arrayCarrito, setArrayCarrito] = useState([])
-
-    const [hayProductos, setHayProductos] = useState(false)
     
     const agregarAlCarrito = (prod) =>{
-        setHayProductos(true)
         setArrayCarrito([
         ...arrayCarrito,
         prod
@@ -18,12 +15,6 @@ export const CartProvider = ({children}) => {
 
     const eliminarDelCarrito = (id) => {
         setArrayCarrito( arrayCarrito.filter(prod => prod.id !== id) )
-        if(arrayCarrito === []){
-            setHayProductos(false)
-        }
-        else {
-            setHayProductos(true)
-        }
     }
 
     const cantidadCarrito = () => {
@@ -32,7 +23,6 @@ export const CartProvider = ({children}) => {
 
     const vaciarCarrito = () => {
         setArrayCarrito([])
-        setHayProductos(false)
     }
 
     const isInCart = (id) => { 
@@ -45,7 +35,7 @@ export const CartProvider = ({children}) => {
 
 
     return(
-        <Context.Provider value={{arrayCarrito, agregarAlCarrito, eliminarDelCarrito, cantidadCarrito, vaciarCarrito, isInCart, precioTotalCarrito, hayProductos}}>
+        <Context.Provider value={{arrayCarrito, agregarAlCarrito, eliminarDelCarrito, cantidadCarrito, vaciarCarrito, isInCart, precioTotalCarrito}}>
             {children}
         </Context.Provider>
     )
