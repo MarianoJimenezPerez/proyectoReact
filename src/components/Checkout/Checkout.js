@@ -47,15 +47,16 @@ export const Checkout = () => {
 
     return (
                 <div>
-                    <h2>Checkout</h2>
+                    <h2 className="t-center">Checkout</h2>
                     {!arrayCarrito.length
                         ?<Redirect to="/tienda"/>
-                        :<form onSubmit={handleSubmit}>
+                        :<form onSubmit={handleSubmit} className="grilla-checkOut t-center">
                             <input
                             type= "text"
                             value= {values.nombre}
                             onChange = {handleInputChange}
                             name="nombre"
+                            placeholder="Ingrese su nombre"
                             required
                         />
                         <input
@@ -63,6 +64,7 @@ export const Checkout = () => {
                             value= {values.mail}
                             onChange = {handleInputChange}
                             name="mail"
+                            placeholder="Ingrese su mail"
                             required
                         />
                         <input
@@ -70,9 +72,10 @@ export const Checkout = () => {
                             value= {values.tel}
                             onChange = {handleInputChange}
                             name="tel"
+                            placeholder="Ingrese su teléfono"
                             required
                         />
-                        <button type="submit">Finalizar compra</button>
+                        <button type="submit" className="btn3">Finalizar compra</button>
                         </form>
                     }
                 </div>

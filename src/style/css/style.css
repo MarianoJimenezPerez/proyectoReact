@@ -308,3 +308,21 @@ a {
 .h-150px {
   height: 150px;
 }
+
+.grilla-checkOut {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0 5em;
+}
+
+.grilla-checkOut input {
+  height: 30px;
+  margin: 1em;
+}
+
+.grilla-checkOut button {
+  grid-area: 2/-3;
+}
